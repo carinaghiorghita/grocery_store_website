@@ -1,0 +1,52 @@
+body {
+    opacity: 1;
+    transition: 1s opacity;
+}
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+
+html {
+    background-color: #660029;
+}
+
+
+#bodi{    font-family: arial;
+
+}
+
+#divv{
+	
+	font-family: arial;
+	font:#7FDBFF;
+    border-radius: 3px;
+
+    display: inline;
+}
+
+.btn{
+	border-radius: 5px;
+	 border-left: 10px solid red;
+    background-color: lightgrey;
+	border-color: lightblue;
+	
+}
+
+#header{
+text-decoration: underline;
+}
+
+
+#coloana{
+	
+}
+
+.linie{
+	display: inline-block;
+	background-color:#ff69b4;
+	margin: 5px;
+	border-radius: 3px;
+	padding:2px;
+	
+}

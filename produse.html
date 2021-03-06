@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vizualizare produse</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<h3>Produse:</h3><br>
+	<div class="result"></div>
+	<script>
+		$.get('/produse', function(data){
+			var nr = data.length;
+
+			for (var i=0; i<nr; i++){
+				$('.result').append('id: ' + data[i].id+'<br>');
+				$('.result').append('denumire: ' + data[i].denumire+'<br>');
+				$('.result').append('pret: ' + data[i].pret+'<br>');
+				$('.result').append('cantitate: ' + data[i].cantitate+'<br>');
+				$('.result').append('zi_primire: ' + data[i].zi_primire+'<br>');
+				$('.result').append('zile_expirare: ' + data[i].zile_expirare+'<br><br>');
+			}
+		})
+	</script>
+</body>
+</html>

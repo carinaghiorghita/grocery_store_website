@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inserare produse</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<p>ID: </p><input type="text" id="id"><br>
+	<p>Denumire: </p><input type="text" id="denumire"><br>
+	<p>Pret: </p><input type="text" id="pret"><br>
+	<p>Cantitate: </p><input type="text" id="cantitate"><br>
+	<p>Zi primire: </p><input type="text" id="zi_primire"><br>
+	<p>Zile pana la expirare: </p><input type="text" id="zile_expirare"><br>
+	<button id="submit">Submit</button>
+
+	<script>
+		$('#submit').click(function(){
+			var id=$('#id').val();
+			var denumire=$('#denumire').val();
+			var pret=$('#pret').val();
+			var cantitate=$('#cantitate').val();
+			var zi_primire=$('#zi_primire').val();
+			var zile_expirare=$('#zile_expirare').val();
+
+			if(id==''||denumire==''||pret==''||cantitate==''||zi_primire==''||zile_expirare==''){
+				alert('Eroare!');
+			}
+			else{
+			var data={};
+			data.id=id;
+			data.denumire=denumire;
+			data.pret=pret;
+			data.cantitate=cantitate;
+			data.zi_primire=zi_primire;
+			data.zile_expirare=zile_expirare;
+
+			$.post('/inserare',data,function(date){},'json');
+
+			alert('Date introduse cu succes');
+			document.getElementById('id').value='';
+			document.getElementById('denumire').value='';
+			document.getElementById('pret').value='';
+			document.getElementById('cantitate').value='';
+			document.getElementById('zi_primire').value='';
+			document.getElementById('zile_expirare').value='';
+			}	});
+	</script>
+</body>
+</html>

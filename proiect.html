@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagina principala</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body id="bodi">
+
+     <ul id="coloana">
+     	<li class="linie" >Conctact</li>
+     	<li class="linie" >Facebook</li>
+     	<li class="linie" >Instagram</li>
+     	<li class="linie" >Email</li>
+     </ul>
+	<h1 id="header"> <center> Bine ai venit la Perry Shop! </center></h1>
+	<p> <center>Acesta este site-ul magazinului nostru, premiat in industria alimentara pe piata din Romania. Ne bucuram ca ne-ati ales! Mai jos gasiti mai multe informatii despre produsele noastre. </center></p>
+	<br>
+	<div id="divv">
+	<center><button class="btn" id='btn1'>Vizualizare produse</button> </center><br>
+	<center><button  class="btn" id='btn2'>Introducere produse</button></center> <br>
+	<center><button class="btn" id='btn3'>Stergere produse</button></center> <br>
+	<center><button class="btn" id='btn4'>Actualizare produse</button></center> <br>
+	</div>
+</body>
+<script>
+	$('#btn1').click(function(){
+		window.location='/produse.html';
+	});
+	$('#btn2').click(function(){
+		window.location='/inserare.html';
+	});
+	$('#btn3').click(function(){
+		window.location='/stergere.html';
+	});
+	$('#btn4').click(function(){
+		window.location='/actualizare.html';
+	});
+</script>
+
+<script>document.body.className += ' fade-out';
+
+$(function() {
+    $('body').removeClass('fade-out');
+});
+</script>
+
+<style type="text/css">
+
+body {
+    opacity: 1;
+    transition: 1s opacity;
+}
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+
+html {
+    background-color: #660029;
+}
+
+
+#bodi{    font-family: arial;
+}
+
+#divv{
+	
+	font-family: arial;
+	font:#7FDBFF;
+    border-radius: 3px;
+
+    display: inline;
+}
+
+.btn{
+	border-radius: 5px;
+	 border-left: 10px solid red;
+    background-color: lightgrey;
+	border-color: lightblue;
+	
+}
+
+#header{
+text-decoration: underline;
+}
+
+.linie{
+	display: inline-block;
+	background-color:#ff69b4;
+	margin: 5px;
+	border-radius: 3px;
+	padding:2px;
+	
+}
+	
+</style>
+
+
+</html>

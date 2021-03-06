@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Actualizare</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<h3>Alegeti un produs:</h3>
+	<p>ID: </p><input type="text" id="id">
+	<button id="btn">Cumparati</button>
+
+	<script>
+		$('#btn').click(function(){
+			var id=$('#id').val();
+
+			if(id==''){alert('Alegeti un produs');}
+			else{
+				$.get('/preluarekant/'+$('#id').val(),function(data){
+					var cantitate=data[0].cantitate;
+					if(cantitate==0)alert("Eroare");
+					else{
+						$.get('/update/'+$('#id').val(),function(data){
+							alert('Cumparat');
+							document.getElementById('id').value='';
+						});
+					}
+				});
+			}
+		});
+	</script>
+</body>
+</html>
